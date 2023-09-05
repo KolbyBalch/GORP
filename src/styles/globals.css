@@ -30,7 +30,7 @@ code {
   font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
 }
 
-.home-container {
+.landing-container {
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -58,4 +58,24 @@ code {
     line-height: 1;
     -webkit-text-stroke: 2px;
   }
+}
+
+.header-padding {
+  padding-top: 12vh;
+}
+
+.home-container {
+  width: 100vw;
+  padding-left: 5vw;
+  justify-content: left;
+
+  .section-heading {
+    color: #4d4d63;
+    margin-bottom: 8px;
+    font-size: 40px;
+  }
+}
+
+a, a:visited {
+  color: #4340d6;
 }
