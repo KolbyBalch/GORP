@@ -6,6 +6,10 @@ body {
     Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+:root {
+  --main-bg-color: #9f9ee2;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -26,10 +30,30 @@ code {
   font-family: Menlo, Monaco, Lucida Console, Courier New, monospace;
 }
 
-.container {
+.home-container {
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
+
+  background-color: var(--main-bg-color);
+  background-image: url("../../public/journey-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
+  .hollow {
+    font: 800 200px Arial;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px;
+    line-height: 1;
+  }
+  .full-title {
+    font: 800 200px Arial;
+    line-height: 1;
+    -webkit-text-stroke: 2px;
+  }
 }
