@@ -45,14 +45,15 @@ code {
   background-attachment: fixed;
   background-position: center;
 
-  .hollow {
-    font: 800 200px Arial;
+  .hollow-title {
+    font: 800 15vw Arial;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px;
     line-height: 1;
+
   }
   .full-title {
-    font: 800 200px Arial;
+    font: 800 15vw Arial;
     line-height: 1;
     -webkit-text-stroke: 2px;
   }
