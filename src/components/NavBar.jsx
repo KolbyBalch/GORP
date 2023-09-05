@@ -6,7 +6,7 @@ export default function NavBar() {
     return (
         <div className={styles.navBar} id="navBar">
             <div>
-                <Menu as="div">
+                <Menu as="div" className={styles.menu}>
                     <div>
                         <Menu.Button className={styles.menuButton}>
                             <div className={styles.hamburgerLines}>
@@ -26,14 +26,14 @@ export default function NavBar() {
                             <Menu.Item className={styles.menuItem}>
                                 {({ active }) => (
                                     <a
-                                        href="/contact"
+                                        href="/beliefs"
                                     ><button className={styles.sectionLink}>What we believe</button></a>
                                 )}
                             </Menu.Item>
                             <Menu.Item className={styles.menuItem}>
                                 {({ active }) => (
                                     <a
-                                        href="/contact"
+                                        href="/expectations"
                                     ><button className={styles.sectionLink}>What to expect</button></a>
                                 )}
                             </Menu.Item>
@@ -48,9 +48,9 @@ export default function NavBar() {
                     </div>
                 </Menu>
             </div>
-            <div className={styles.imageContainer}>
+            <a className={styles.imageContainer} href='/'>
                 <Image src='/journey-church-logo.png' alt="Journey Church logo" layout="fill"/>
-            </div>
+            </a>
         </div>
     )
 }

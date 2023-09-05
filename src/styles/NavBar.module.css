@@ -13,6 +13,10 @@
     top: 0;
 }
 
+.menu {
+    width: 92vw;
+}
+
 .menuButton {
     height: 8vh;
     width: 8vh;
@@ -64,6 +68,7 @@
 .menuItems {
     display: flex;
     flex-direction: column;
+    width: 92vw;
     @media screen and (min-width: 480px) {
         flex-direction: row;
     }
