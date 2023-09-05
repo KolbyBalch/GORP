@@ -69,7 +69,7 @@
     .menuItem {
         transform: translate(-4vh, 2vh);
 
-        .sectionLink{
+        .sectionLink {
             background-color: rgb(101, 97, 122);
             font: 500 15px Arial;
             border: 0;
@@ -83,6 +83,7 @@
                 border-right: solid 2px white;
             }
         }
+        
         .lastLink {            
             background-color: rgb(101, 97, 122);
             font: 500 15px Arial;
@@ -92,7 +93,8 @@
             height: 8vh;
             @media screen and (min-width: 480px) {
                 width: 25vw;
-            }}
+            }
+        }
     }
 }
 
