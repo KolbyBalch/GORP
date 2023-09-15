@@ -44,6 +44,9 @@ code {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
   background-position: center;
 
   .hollow-title {
