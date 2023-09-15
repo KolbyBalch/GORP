@@ -57,9 +57,9 @@ export default function Home() {
         <section className="team-bio">
           <div>
             <h3 className="bio-header">Minister of Music</h3>
-            <p>Bro. Matt leads our weekly worship with a guitar in hand and a passion and love for Jesus in his heart.</p>
+            <p>Bro. Matt Lee leads our weekly worship with a guitar in hand and a passion and love for Jesus in his heart.</p>
           </div>
-          <img src="/matt-circle.png" alt="Music minister Matt" />
+          <img src="/matt-lee-circle.png" alt="Music minister Matt Lee" />
         </section>
       </div>
     </main>
