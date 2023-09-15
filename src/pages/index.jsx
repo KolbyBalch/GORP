@@ -47,12 +47,20 @@ export default function Home() {
         <p>All Sunday morning services are also streamed live on our <a target="_blank" rel="noreferrer" href="https://www.facebook.com/jfellowshipchurch">Facebook page</a>.</p>
 
         <h2 className="section-heading">The team</h2>
-        <h3>Pastor</h3>
-        <p>Pastor Jonathan Fail has been with Jouney for some time now, but officially took up the role of Pastor in the summer of 2023.</p>
-        <h3>Minister of Music</h3>
-        <p>Bro. Matt leads our weekly worship with a guitar in hand and a passion and love for Jesus in his heart.</p>
-        <h3>Minister of Children</h3>
-        <p>Though not officially the Minister of Children, our very own Claire Fail has taken up the torch of taking care of and leading our young children.</p>
+        <section className="team-bio">
+          <div>
+            <h3 className="bio-header">Pastor</h3>
+            <p>Pastor Jonathan Fail has been with Jouney for some time now, but officially took up the role of Pastor in the summer of 2023.</p>
+          </div>
+          <img src="/j-fail-circle.png" alt="Pastor Jonathan Fail" />
+        </section>
+        <section className="team-bio">
+          <div>
+            <h3 className="bio-header">Minister of Music</h3>
+            <p>Bro. Matt leads our weekly worship with a guitar in hand and a passion and love for Jesus in his heart.</p>
+          </div>
+          <img src="/matt-circle.png" alt="Music minister Matt" />
+        </section>
       </div>
     </main>
   )

@@ -64,9 +64,42 @@ code {
   padding-top: 12vh;
 }
 
+.bio-header {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.team-bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (min-width: 480px) {
+    flex-direction: row;
+  }
+  div {
+    flex-direction: column;
+    p {
+      margin: 0px 0px 16px 0px;
+      @media screen and (min-width: 480px) {
+        max-width: 50vw;
+      }
+    }
+  }
+  img {
+    aspect-ratio: 1;
+    max-width: 80vw;
+    @media screen and (min-width: 480px) {
+      max-width: 20vw;
+    }
+  }
+}
+
 .home-container {
   width: 100vw;
   padding-left: 5vw;
+  padding-right: 5vw;
+  margin-bottom: 40px;
   justify-content: left;
 
   .section-heading {
