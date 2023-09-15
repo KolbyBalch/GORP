@@ -74,6 +74,7 @@ code {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 16px;
   @media screen and (min-width: 480px) {
     flex-direction: row;
   }
