@@ -33,29 +33,33 @@ export default function Home() {
       </div>
       <NavBar />
       <div className="home-container" id="basicInfo">
-        <h2 className="section-heading">The time</h2>
-        <p>Our Sunday morning services begin at 10am CST.</p>
-        <p>Wednesday evening classes for adults and children begin at 6:30pm CST.</p>
-        <p>Monthly prayer service is the last Sunday of the month at 6pm CST.</p>
+        <div>
+          <h2 className="section-heading">The time</h2>
+          <p>Sunday morning services begin at 10am CST.</p>
+          <p>Wednesday evening classes for adults and children begin at 6:30pm CST.</p>
+          <p>Monthly prayer service is the last Sunday of the month at 6pm CST.</p>
+        </div>
 
-        <h2 className="section-heading">The place</h2>
-        <p>Our main sanctuary is located at{' '}
-          <a target="_blank" rel="noreferrer" href="https://goo.gl/maps/7eBffeZjS7NgQp3Q9">
-            7539 US-11, Carriere, MS 39426
-          </a>.
-        </p>
-        <p>All Sunday morning services are also streamed live on our <a target="_blank" rel="noreferrer" href="https://www.facebook.com/jfellowshipchurch">Facebook page</a>.</p>
+        <div>
+          <h2 className="section-heading">The place</h2>
+          <p>Our main sanctuary is located at{' '}
+            <a target="_blank" rel="noreferrer" href="https://goo.gl/maps/7eBffeZjS7NgQp3Q9">
+              7539 US-11, Carriere, MS 39426
+            </a>.
+          </p>
+          <p>All Sunday morning services are also streamed live on our <a target="_blank" rel="noreferrer" href="https://www.facebook.com/jfellowshipchurch">Facebook page</a>.</p>
+        </div>
 
-        <h2 className="section-heading">The team</h2>
-        <section className="team-bio">
-          <div>
-            <h3 className="bio-header">Meet the Pastor</h3>
-            <p>Pastor Jonathan Fail has been with Jouney for some time now, but officially took up the role of Pastor in the summer of 2023.</p>
-          </div>
-          <img src="/j-fail-circle.png" alt="Pastor Jonathan Fail" width="80%" height="80%"/>
-        </section>
-        <section className="team-bio">
-        </section>
+        <div>
+          <h2 className="section-heading">The team</h2>
+          <section className="team-bio">
+            <div>
+              <h3 className="bio-header">Meet the Pastor</h3>
+              <p>Pastor Jonathan Fail has been with Jouney for some time now, but officially took up the role of Pastor in the summer of 2023.</p>
+            </div>
+            <img src="/j-fail-circle.png" alt="Pastor Jonathan Fail" width="80%" height="80%"/>
+          </section>
+        </div>
       </div>
     </main>
   )
