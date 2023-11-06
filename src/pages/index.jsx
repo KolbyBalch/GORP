@@ -49,17 +49,12 @@ export default function Home() {
         <h2 className="section-heading">The team</h2>
         <section className="team-bio">
           <div>
-            <h3 className="bio-header">Pastor</h3>
+            <h3 className="bio-header">Meet the Pastor</h3>
             <p>Pastor Jonathan Fail has been with Jouney for some time now, but officially took up the role of Pastor in the summer of 2023.</p>
           </div>
           <img src="/j-fail-circle.png" alt="Pastor Jonathan Fail" />
         </section>
         <section className="team-bio">
-          <div>
-            <h3 className="bio-header">Minister of Music</h3>
-            <p>Bro. Matt Lee leads our weekly worship with a guitar in hand and a passion and love for Jesus in his heart.</p>
-          </div>
-          <img src="/matt-lee-circle.png" alt="Music minister Matt Lee" />
         </section>
       </div>
     </main>
