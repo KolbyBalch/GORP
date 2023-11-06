@@ -1,8 +1,8 @@
 .navBar {
     width: 100vw;
-    height: 12vh;
+    height: 100px;
     background-color: var(--main-bg-color);
-    padding: 2vh 4vh;
+    padding: 20px 40px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,17 +18,17 @@
 }
 
 .menuButton {
-    height: 8vh;
-    width: 8vh;
+    height: 100%;
+    width: auto;
     border: 0;
     background-color: transparent;
     
     .hamburgerLines {
         display: block;
-        height: 5vh;
-        width: 6vh;
+        height: 42px;
+        width: 50px;
         position: absolute;
-        transform: translate(0vh, -2.5vh);
+        transform: translate(0px, -10px);
         z-index: 2;
         display: flex;
         flex-direction: column;
@@ -73,7 +73,7 @@
         flex-direction: row;
     }
     .menuItem {
-        transform: translate(-4vh, 2vh);
+        transform: translate(-40px, 60px);
 
         .sectionLink {
             background-color: #65617a;
@@ -108,7 +108,8 @@
 .imageContainer {
     aspect-ratio: 241/51;
     right: 5vw;
-    width: auto;
-    height: 8vh;
+    width: 340px;
+    height: auto;
+    max-width: 60vw;
     position: absolute;
 }
