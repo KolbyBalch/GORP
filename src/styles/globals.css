@@ -47,12 +47,7 @@ code {
   background-position: center;
 
   @media screen and (min-width: 480px) {
-    background-color: var(--main-bg-color);
     background-image: url("../../public/journey-bg.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
   }
 
   .hollow-title {
@@ -107,6 +102,7 @@ code {
 }
 
 .home-container {
+  max-width: 700px;
   width: 100vw;
   padding-left: 5vw;
   padding-right: 5vw;
