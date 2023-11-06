@@ -90,9 +90,9 @@ code {
   img {
     aspect-ratio: 1;
     height: auto;
-    width: 80%;
+    width: 80dvw;
     @media screen and (min-width: 480px) {
-      width: 20%;
+      width: 20dvw;
     }
   }
 }
