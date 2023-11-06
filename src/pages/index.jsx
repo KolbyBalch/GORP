@@ -35,8 +35,8 @@ export default function Home() {
       <div className="home-container" id="basicInfo">
         <h2 className="section-heading">The time</h2>
         <p>Our Sunday morning services begin at 10am CST.</p>
-        <p>New Wednesday evening classes for adults and children begin at 6pm CST.</p>
-        <p>Monthly prayer service is now the last Sunday of the month at 6pm CST.</p>
+        <p>Wednesday evening classes for adults and children begin at 6:30pm CST.</p>
+        <p>Monthly prayer service is the last Sunday of the month at 6pm CST.</p>
 
         <h2 className="section-heading">The place</h2>
         <p>Our main sanctuary is located at{' '}
