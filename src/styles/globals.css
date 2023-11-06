@@ -75,8 +75,8 @@ code {
 .home-container {
   display: flex;
   flex-direction: column;
-  max-width: 1020px;
   width: 100vw;
+  max-width: 80vw;
   margin-bottom: 40px;
   justify-content: left;
   padding: 10px;

@@ -47,7 +47,7 @@ export default function Home() {
               7539 US-11, Carriere, MS 39426
             </a>.
           </p>
-          <p>All Sunday morning services are also streamed live on our <a target="_blank" rel="noreferrer" href="https://www.facebook.com/jfellowshipchurch">Facebook page</a>.</p>
+          <p>Sunday morning services are also streamed live on our <a target="_blank" rel="noreferrer" href="https://www.facebook.com/jfellowshipchurch">Facebook page</a>.</p>
         </div>
 
         <div>
