@@ -45,7 +45,7 @@ code {
   background-size: cover;
   background-position: center;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: 480px) and (min-device-width: 480px) {
     background-image: url("../../public/journey-bg.jpg");
   }
 
