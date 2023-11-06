@@ -51,7 +51,7 @@ export default function Home() {
         </div>
 
         <div>
-          <h2 className="section-heading">The pastor</h2>
+          <h2 className="section-heading">The team</h2>
           <section className="team-bio">
             <div>
               <p>Pastor Jonathan Fail has been with Jouney for some time now, but officially took up the role of Pastor in the summer of 2023.</p>
@@ -59,6 +59,12 @@ export default function Home() {
             <img src="/j-fail-circle.png" alt="Pastor Jonathan Fail" width="80%" height="80%"/>
           </section>
         </div>
+      </div>
+      <div>
+        <h2 className="section-heading">Online giving</h2>
+      </div>
+      <div>
+        <h2 className="section-heading">Upcoming Events</h2>
       </div>
     </main>
   )

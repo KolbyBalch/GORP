@@ -2,7 +2,7 @@ import NavBar from "@components/NavBar";
 import React, { useEffect } from "react";
 import styles from "@styles/NavBar.module.css"
 
-export default function Home() {
+export default function Expectations() {
 
     useEffect(() => {
         const header = document.getElementById("navBar");
@@ -13,11 +13,6 @@ export default function Home() {
   return (
     <main>
       <NavBar alwaysSticky />
-      <div className="home-container">
-        <span className="hollow-title">START</span>
-        <span className="hollow-title">YOUR</span>
-        <span className="full-title">JOURNEY</span>
-      </div>
     </main>
   )
 }

@@ -1,0 +1,109 @@
+.landing-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  
+    background-color: var(--main-bg-color);
+    background-image: url("../../public/journey-bg-vertical.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  
+    @media screen and (min-width: 480px) {
+      background-image: url("../../public/journey-bg.jpg");
+    }
+  
+    .hollow-title {
+      font: 800 15vw Arial;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 2px;
+      line-height: 1;
+  
+    }
+    .full-title {
+      font: 800 15vw Arial;
+      line-height: 1;
+      -webkit-text-stroke: 2px;
+    }
+  }
+  
+  .header-padding {
+    padding-top: 12vh;
+  }
+  
+  .bio-header {
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    
+    margin-bottom: 40px;
+    justify-content: left;
+    padding: 10px;
+  
+    div {
+      flex-direction: column;
+      @media screen and (min-width: 480px) {
+        width: 33%;
+        padding: 0 10px 0 10px;
+      }
+    }
+  
+    @media screen and (min-width: 480px) {
+      max-width: 80vw;
+      flex-direction: row;
+    }
+  }
+  
+  .section-heading {
+    color: #4d4d63;
+    margin-bottom: 8px;
+    font-size: 40px;
+  }
+  
+  .middle-column {
+    @media screen and (min-width: 480px) {
+      border-left: 1px solid #b2b2b9;
+      border-right: 1px solid #b2b2b9;
+    }
+  }
+  
+  .team-bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    @media screen and (min-width: 480px) {
+      flex-direction: row;
+    }
+    div {
+      flex-direction: column;
+      @media screen and (min-width: 480px) {
+        width: 50%;
+      }
+      p {
+        margin: 0px 0px 16px 0px;
+        @media screen and (min-width: 480px) {
+          width: 100%;
+        }
+      }
+    }
+    img {
+      aspect-ratio: 1;
+      height: auto;
+      width: 80vw;
+      @media screen and (min-width: 480px) {
+        width: 10vw;
+      }
+    }
+  }
+  
