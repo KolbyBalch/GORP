@@ -47,12 +47,7 @@ code {
   background-position: center;
 
   @media screen and (min-width: 480px) {
-    background-color: var(--main-bg-color);
     background-image: url("../../public/journey-bg.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
   }
 
   .hollow-title {
@@ -99,6 +94,7 @@ code {
   img {
     aspect-ratio: 1;
     width: 100px;
+    height: 100px;
     @media screen and (min-width: 480px) {
       width: 100px;
     }
