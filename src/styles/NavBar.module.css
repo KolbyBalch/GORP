@@ -79,7 +79,7 @@
             background-color: rgb(101, 97, 122);
             font: 500 15px Arial;
             border: 0;
-            width: 25vw;
+            width: 20vw;
             border-bottom: 0;
             border-right: solid 2px white;
             color: white;
@@ -99,7 +99,7 @@
             width: 100vw;
             height: 8vh;
             @media screen and (min-width: 480px) {
-                width: 25vw;
+                width: 20vw;
             }
         }
     }

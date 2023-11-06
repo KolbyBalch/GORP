@@ -93,6 +93,7 @@ code {
   img {
     aspect-ratio: 1;
     height: auto;
+    max-width: 400px;
     width: 80vw;
     @media screen and (min-width: 480px) {
       width: 20vw;

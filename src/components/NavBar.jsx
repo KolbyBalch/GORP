@@ -26,6 +26,13 @@ export default function NavBar() {
                             <Menu.Item className={styles.menuItem}>
                                 {({ active }) => (
                                     <a
+                                        href="/services"
+                                    ><button className={styles.sectionLink}>Services</button></a>
+                                )}
+                            </Menu.Item>
+                            <Menu.Item className={styles.menuItem}>
+                                {({ active }) => (
+                                    <a
                                         href="/beliefs"
                                     ><button className={styles.sectionLink}>What we believe</button></a>
                                 )}
