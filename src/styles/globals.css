@@ -85,7 +85,7 @@ code {
     flex-direction: column;
     @media screen and (min-width: 480px) {
       width: 33%;
-      padding: 0 5px 0 5px;
+      padding: 0 10px 0 10px;
     }
   }
   .section-heading {
@@ -96,6 +96,13 @@ code {
 
   @media screen and (min-width: 480px) {
     flex-direction: row;
+  }
+}
+
+.middle-column {
+  @media screen and (min-width: 480px) {
+    border-left: 1px solid #b2b2b9;
+    border-right: 1px solid #b2b2b9;
   }
 }
 

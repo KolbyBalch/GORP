@@ -40,7 +40,7 @@ export default function Home() {
           <p>Monthly prayer service is the last Sunday of the month at 6pm CST.</p>
         </div>
 
-        <div>
+        <div className="middle-column">
           <h2 className="section-heading">The place</h2>
           <p>Our main sanctuary is located at{' '}
             <a target="_blank" rel="noreferrer" href="https://goo.gl/maps/7eBffeZjS7NgQp3Q9">
@@ -51,10 +51,9 @@ export default function Home() {
         </div>
 
         <div>
-          <h2 className="section-heading">The team</h2>
+          <h2 className="section-heading">The pastor</h2>
           <section className="team-bio">
             <div>
-              <h3 className="bio-header">Meet the Pastor</h3>
               <p>Pastor Jonathan Fail has been with Jouney for some time now, but officially took up the role of Pastor in the summer of 2023.</p>
             </div>
             <img src="/j-fail-circle.png" alt="Pastor Jonathan Fail" width="80%" height="80%"/>
