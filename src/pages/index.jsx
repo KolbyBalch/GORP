@@ -52,7 +52,7 @@ export default function Home() {
             <h3 className="bio-header">Meet the Pastor</h3>
             <p>Pastor Jonathan Fail has been with Jouney for some time now, but officially took up the role of Pastor in the summer of 2023.</p>
           </div>
-          <img src="/j-fail-circle.png" alt="Pastor Jonathan Fail" width="100px" height="100px"/>
+          <img src="/j-fail-circle.png" alt="Pastor Jonathan Fail" width="80vw" height="80vw"/>
         </section>
         <section className="team-bio">
         </section>
