@@ -1,6 +1,7 @@
 .expectations-div {
     padding: 100px 10px 0px 10px;
     text-align: center;
+    height: 100vh;
 
     .lead-text {
         font-size: 20px;
