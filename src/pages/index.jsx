@@ -60,13 +60,17 @@ export default function Home() {
           </section>
         </div>
       </div>
+      
+      <div className="giving-section">
+        <h2 className="section-heading">Online giving</h2>
+        <p className="giving-section">We are working hard to setup online giving through our website. In the meantime, use the following link to donate to Journey online.</p>
+        <a className="big-link" href="https://app.easytithe.com/App/Form/74da2380-6834-4920-b043-d00741127b62"><strong>Easy Tithe</strong></a>
+      </div>
 
-      <h2 className="section-heading">Online giving</h2>
-      <p>We are working hard to setup online giving through our website. In the meantime, use the following link to donate to Journey online.</p>
-      <a className="big-link" href="https://app.easytithe.com/App/Form/74da2380-6834-4920-b043-d00741127b62"><strong>Easy Tithe</strong></a>
-
-
-      <h2 className="section-heading">Upcoming Events</h2>
+      <div className="events-section">
+        <h2 className="section-heading">Upcoming Events</h2>
+        <img src="/journey-calendar.png" alt="Calendar of upcoming events" width="100%" height="auto"/>
+      </div>
     </main>
   )
 }

@@ -114,3 +114,21 @@
 .big-link {
   font-size: 20px;
 }
+
+.giving-section {
+  padding: 0px 10px 0px 10px;
+  text-align: center;
+}
+
+.events-section {
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: auto;
+
+    @media screen and (min-width: 480px) {
+      width: 80%
+    }
+  }
+}
