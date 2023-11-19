@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Footer from "./Footer";
+import NavBar from './NavBar';
 
 export default function Layout({ children }) {
     return (
@@ -9,6 +10,7 @@ export default function Layout({ children }) {
                 <title>Journey Church MS</title>
                 <link rel="icon" href="/journey-church-logo-circle.png" type="image/png" sizes="any" />
             </Head>
+            <NavBar />
             <main>{children}</main>
             <Footer />
         </>

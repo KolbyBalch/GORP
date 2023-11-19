@@ -1,6 +1,5 @@
+@import "NavBar.css";
 @import "home.css";
-@import "beliefs.css";
-@import "expectations.css";
 
 html,
 body {
@@ -11,7 +10,7 @@ body {
 }
 
 :root {
-  --main-bg-color: #9f9ee2;
+  --main-bg-color: rgb(173, 59, 50);
 }
 
 * {
