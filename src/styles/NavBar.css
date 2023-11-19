@@ -3,8 +3,19 @@
     height: 100px;
     background-color: var(--main-bg-color);
     padding: 0px 40px;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     
+    div {
+        text-align: center;
+        align-items: center;
+        width: 33%;
+    }
+    
+    .login-div {
+        text-align: right;
+    }
 }
 
 .sticky {
@@ -17,4 +28,10 @@
     font-size: 75px;
     margin: 0px;
     text-decoration: none;
+}
+
+.login-button {
+    margin: 20px 0px 20px 0px;
+    height: 60px;
+    width: 120px;
 }
