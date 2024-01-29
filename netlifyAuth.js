@@ -1,4 +1,7 @@
 import netlifyIdentity from 'netlify-identity-widget'
+export const authUser = {
+    userToken: null,
+}
 
 const netlifyAuth = {
   isAuthenticated: false,
@@ -16,6 +19,7 @@ const netlifyAuth = {
     netlifyIdentity.on('login', (user) => {
       this.user = user
       callback(user)
+      authUser.userToken = user.token.access_token
       netlifyIdentity.close()
     })
   },

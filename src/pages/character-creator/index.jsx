@@ -1,4 +1,5 @@
 import React from "react";
+import { authUser } from "netlifyAuth";
 
 export default function CharacterCreator() {
   return (
@@ -6,6 +7,7 @@ export default function CharacterCreator() {
       <h1>GORP</h1>
       <form name="character" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="character" />
+        <input type="hidden" name="user-token" value={authUser.userToken} />
         <label>Character Name: <input type="text" name="name" /></label>
       </form>
     </div>
