@@ -7,6 +7,7 @@ export default function NavBar() {
             setLoggedIn(!!user)
             setUser(user)
             netlifyAuth.closeModal()
+            console.log(netlifyAuth.currentUser)
         })
     }
 
