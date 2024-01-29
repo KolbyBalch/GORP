@@ -3,17 +3,11 @@ import netlifyAuth from '../../netlifyAuth.js'
 export default function NavBar() {
 
     let login = () => {
+        console.log(netlifyAuth.user)
         netlifyAuth.authenticate((user) => {
             setLoggedIn(!!user)
             setUser(user)
             netlifyAuth.closeModal()
-        })
-    }
-    
-    let logout = () => {
-        netlifyAuth.signout(() => {
-            setLoggedIn(false)
-            setUser(null)
         })
     }
 
