@@ -1,4 +1,22 @@
+import netlifyAuth from '../../netlifyAuth.js'
+
 export default function NavBar() {
+
+    let login = () => {
+        netlifyAuth.authenticate((user) => {
+            setLoggedIn(!!user)
+            setUser(user)
+            netlifyAuth.closeModal()
+        })
+    }
+    
+    let logout = () => {
+        netlifyAuth.signout(() => {
+            setLoggedIn(false)
+            setUser(null)
+        })
+    }
+
     return (
         <div className="nav-bar sticky" id="navBar">
             <div>
@@ -11,7 +29,7 @@ export default function NavBar() {
             <div className="login-div">
                 <button 
                     className="login-button" 
-                    onClick={() => console.log("login clicked")}
+                    onClick={login}
                 >
                     Login
                 </button>
