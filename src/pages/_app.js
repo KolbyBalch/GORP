@@ -8,6 +8,7 @@ function Application({ Component, pageProps }) {
 
   useEffect(() => {
     netlifyAuth.initialize((user) => {
+      console.log(user)
       setLoggedIn(!!user)
     })
   }, [loggedIn])
