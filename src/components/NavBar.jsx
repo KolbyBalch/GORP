@@ -1,3 +1,4 @@
+import { useStore } from './netlifyAuth.js'
 import { login } from './netlifyAuth.js'
 
 export default function NavBar() {
@@ -16,7 +17,7 @@ export default function NavBar() {
                     className="login-button" 
                     onClick={login}
                 >
-                    Login
+                    {!!!useStore.getState()?.user?.id ? <>Login</> : <>Logged in</>}
                 </button>
             </div>
         </div>
