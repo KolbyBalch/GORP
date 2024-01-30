@@ -7,8 +7,8 @@ export default function CharacterCreator() {
 
   useEffect(() => {
     if (!!!useStore.getState()?.user) {
-      login()
       router.push('/')
+      login()
     }
   })
 
