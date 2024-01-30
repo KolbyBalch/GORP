@@ -2,6 +2,10 @@ export const Lineages = {
     "BeastBorn": {
         "Description": "Beast-born is a category of Beast-like peoples from across the World of GORP. During character creation, work with your GM and select a beast that you would like to play as. This Beastial-type should be represented in your character design.",
         "Ability": "As a Beast-born, you add your Proficiency Bonus on checks to perceive your surroundings, this does stack with other proficiencies. Additionally, you have a Natural Weapon. This can be claws, fangs, talons, etc. but the Natural Weapon counts as an Unarmed Strike, dealing 1d4 of your choice of Physical Damage types (claws/talons - slashing, fangs/horns - piercing, trunk/hoof - bludgeoning).",
+        "AdditionalOption": {
+            "prompt": "Natural Weapon Damage:",
+            "options": ["Bludgeoning", "Piercing", "Slashing"],
+        }
     },
     "Cellier": {
         "Description": "Cellier, 'Cell' singular, are a light-blue skinned people with long, thin features.",
@@ -10,6 +14,10 @@ export const Lineages = {
     "Elemental": {
         "Description": "Elementals are people either originally from or related to the Mortal Realm's Elemental Ring. During Character creation, select one type from the Elemental Damages. This is your Elemental Type. Your Elemental Type should be represented in your character design.",
         "Ability": "You have resistance to your Elemental Type of damage. Additionally, you have access to one Influence based cantrip, dealing 1d8 damage of an Elemental damage type that matches your Elemental Type. This spell is known in addition to any spells your class grants you.",
+        "AdditionalOption": {
+            "prompt": "Associated Elemental Type:",
+            "options": ["Fire", "Ice", "Lightning", "Poison", "Thunder"],
+        }
     },
     "Elf": {
         "Description": "Elves are the oldest civilization, with plenty of tradition and social problems to accompany them.",

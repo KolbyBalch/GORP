@@ -8,12 +8,23 @@ export default function CharacterCreator() {
   const [startingClass, setStartingClass] = useState("")
   const [chosenSubclass, setChosenSubclass] = useState("")
 
+  // LINEAGE OPTION DROPDOWN
+  useEffect(() => {
+    let addtionalOptionSelector = document.getElementById("lineageOptionSelector");
+    addtionalOptionSelector.options.length = 0;
+    if (Lineages[selectedLineage]?.AdditionalOption) {
+      Lineages[selectedLineage]?.AdditionalOption.options.map(option => {
+        addtionalOptionSelector.options[addtionalOptionSelector.options.length] = new Option(option);
+      })
+    }
+  })
+
+  // SUBCLASS DROPDOWN
   useEffect(() => {
     let subclassSelector = document.getElementById("subclassSelector");
     subclassSelector.options.length = 0;
 
     if(Classes[startingClass]?.Subclasses){
-      console.log(Object.keys(Classes[startingClass]?.Subclasses))
       Object.keys(Classes[startingClass]?.Subclasses).map(subclass => {
         console.log(subclass)
         subclassSelector.options[subclassSelector.options.length] = new Option(subclass);
@@ -60,6 +71,17 @@ export default function CharacterCreator() {
           </label>
           <p hidden={selectedLineage === ""}><strong>Description:</strong><br/>{Lineages[selectedLineage]?.Description}</p>
           <p hidden={selectedLineage === ""}><strong>Ability:</strong><br/>{Lineages[selectedLineage]?.Ability}</p>
+          <label hidden={!!!Lineages[selectedLineage]?.AdditionalOption}>
+            <h3>
+              {Lineages[selectedLineage]?.AdditionalOption?.prompt}
+            </h3>
+            <select 
+              name="lineageOptionSelector" 
+                id="lineageOptionSelector"
+                hidden={!!!Lineages[selectedLineage]?.AdditionalOption}
+              >
+              </select>
+          </label>
         </div>
         {/* Class Selections */}
         <div>
@@ -72,7 +94,7 @@ export default function CharacterCreator() {
               <option value="Monk">Monk</option>
               <option value="Paladin">Paladin</option>
               <option value="Ranger">Ranger</option>
-              <option value="Rouge">Rouge</option>
+              <option value="Rogue">Rogue</option>
               <option value="Sage">Sage</option>
               <option value="Sorcerer">Sorcerer</option>
               <option value="Tinkerer">Tinkerer</option>
