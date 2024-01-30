@@ -1,7 +1,15 @@
-import { useStore } from './netlifyAuth.js'
-import { login } from './netlifyAuth.js'
+import { useEffect, useState } from "react";
+import { useStore, login } from './netlifyAuth.js'
 
 export default function NavBar() {
+    const [buttonContent, setButtonContent] = useState("Login");
+    useEffect(() => {
+        if (useStore.getState()?.user) {
+            setButtonContent("Logged in!");
+        } else {
+            setButtonContent("Login");
+        }
+    }, [useStore])
 
     return (
         <div className="nav-bar sticky" id="navBar">
@@ -17,7 +25,7 @@ export default function NavBar() {
                     className="login-button" 
                     onClick={login}
                 >
-                    {!!!useStore.getState()?.user?.id ? <>Login</> : <>Logged in</>}
+                    {buttonContent}
                 </button>
             </div>
         </div>
