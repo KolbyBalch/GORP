@@ -1,7 +1,17 @@
-import React from "react";
-import { useStore } from "@components/netlifyAuth";
+import React, { useEffect } from "react";
+import { useStore, login } from "@components/netlifyAuth";
+import { useRouter } from "next/router";
 
 export default function CharacterCreator() {
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!!!useStore.getState()?.user) {
+      login()
+      router.push('/')
+    }
+  })
+
   return (
     <div className="home-container">
       <h1>GORP</h1>

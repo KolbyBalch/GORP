@@ -1,14 +1,6 @@
-import netlifyAuth from './netlifyAuth.js'
+import { login } from './netlifyAuth.js'
 
 export default function NavBar() {
-
-    let login = () => {
-        netlifyAuth.authenticate((user) => {
-            setLoggedIn(!!user)
-            setUser(user)
-            netlifyAuth.closeModal()
-        })
-    }
 
     return (
         <div className="nav-bar sticky" id="navBar">

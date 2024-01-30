@@ -3,6 +3,14 @@ import { create } from 'zustand'
 
 export const useStore = create(() => ({ user: null }))
 
+export const login = () => {
+  netlifyAuth.authenticate((user) => {
+      setLoggedIn(!!user)
+      setUser(user)
+      netlifyAuth.closeModal()
+  })
+}
+
 const netlifyAuth = {
   isAuthenticated: false,
   user: null,
