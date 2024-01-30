@@ -12,6 +12,8 @@ export default function CharacterCreator() {
   useEffect(() => {
     let addtionalOptionSelector = document.getElementById("lineageOptionSelector");
     addtionalOptionSelector.options.length = 0;
+    addtionalOptionSelector.options[0] = new Option()
+
     if (Lineages[selectedLineage]?.AdditionalOption) {
       Lineages[selectedLineage]?.AdditionalOption.options.map(option => {
         addtionalOptionSelector.options[addtionalOptionSelector.options.length] = new Option(option);
@@ -23,6 +25,7 @@ export default function CharacterCreator() {
   useEffect(() => {
     let subclassSelector = document.getElementById("subclassSelector");
     subclassSelector.options.length = 0;
+    subclassSelector.options[0] = new Option()
 
     if(Classes[startingClass]?.Subclasses){
       Object.keys(Classes[startingClass]?.Subclasses).map(subclass => {
@@ -43,16 +46,13 @@ export default function CharacterCreator() {
   // }
   return (
     <div className="character-creator-container">
-      <h1>GORP</h1>
       <form name="character" method="POST" data-netlify="true">
         {/* Hidden Inputs */}
-        <div>
-          <input type="hidden" name="form-name" value="character" />
-          <input type="hidden" name="user-token" value={useStore.getState()?.user?.id} />
-        </div>
+        <input type="hidden" name="form-name" value="character" />
+        <input type="hidden" name="user-token" value={useStore.getState()?.user?.id} />
         {/* Character Names */}
         <div>
-          <label><h2>Character Name: <input type="text" name="name" /></h2></label>
+          <label><h1>Character Name: <input type="text" name="name" /></h1></label>
         </div>
         {/* Lineage Selection */}
         <div>
@@ -101,13 +101,22 @@ export default function CharacterCreator() {
               <option value="Warrior">Warrior</option>
             </select>
           </label>
-          <p hidden={startingClass === ""}><strong>Description:</strong><br/>{Classes[startingClass]?.Description}</p>
+          <p hidden={startingClass === ""}>
+            <strong>Description:</strong>
+            <br/>
+            {Classes[startingClass]?.Description}
+          </p>
+          <p hidden={startingClass === ""}>
+            <strong>Proficient with:</strong>
+            <br/>
+            {Classes[startingClass]?.Proficiency} Checks
+          </p>
           <p hidden={startingClass === ""}>
             <strong>{Classes[startingClass]?.Exclusive.name}:</strong>
             <br/>
             {Classes[startingClass]?.Exclusive.description}
           </p>
-
+          {/* Subclass Selection */}
           <label hidden={startingClass === ""}><h3>Subclass:</h3>
             <select 
               id="subclassSelector" 
@@ -115,6 +124,31 @@ export default function CharacterCreator() {
               onChange={(event) => setChosenSubclass(event.target.value)}
             >
             </select>
+          </label>
+          <p hidden={!!!chosenSubclass}>
+            <strong>Description:</strong>
+            <br/>
+            {Classes[startingClass]?.Subclasses[chosenSubclass]?.description}
+          </p>
+        </div>
+        <div>
+          <label><h2>Ability Scores:</h2>
+            {[20, 12, 10, 8, 6, 4].map(score => {
+              return (
+                <div key={score} className="ability-score-selector">
+                  <h3>{score}:</h3>
+                  <select name={`score${score}`}>
+                    <option value=""></option>
+                    <option value="Body">Body</option>
+                    <option value="Dexterity">Dexterity</option>
+                    <option value="Influence">Influence</option>
+                    <option value="Mind">Mind</option>
+                    <option value="Strength">Strength</option>
+                    <option value="Will">Will</option>
+                  </select>
+                </div>
+              );
+            })}
           </label>
         </div>
       </form>

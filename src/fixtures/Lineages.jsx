@@ -8,7 +8,7 @@ export const Lineages = {
         }
     },
     "Cellier": {
-        "Description": "Cellier, 'Cell' singular, are a light-blue skinned people with long, thin features.",
+        "Description": "Cellier, or 'Cell' singular, are a light-blue skinned people with long, thin features.",
         "Ability": "As a Cell, you may use Dexterity for Unarmed Attacks and checks made for jumping, climbing, etc. that would normally be Strength based.",
     },
     "Elemental": {

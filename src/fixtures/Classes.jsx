@@ -105,6 +105,16 @@ export const Classes = {
             9: [],
         },
         "Subclasses": {
+            "Shepard": {
+                "name": "Shepard",
+                "description": "A kindred spirit to the beasts of the land...",
+                "abilities": {
+                    1: [],
+                    4: [],
+                    7: [],
+                    10: [],
+                }
+            }
         }
     },
     "Mage": {
@@ -124,6 +134,16 @@ export const Classes = {
             9: [],
         },
         "Subclasses": {
+            "Evoker": {
+                "name": "Evoker",
+                "description": "Powerful elements can be conjured from the Threads of Magic, but you have learned to shape them...",
+                "abilities": {
+                    1: [],
+                    4: [],
+                    7: [],
+                    10: [],
+                }
+            }
         }
     },
     "Monk": {
@@ -131,7 +151,7 @@ export const Classes = {
         "Proficiency" : "Body",
         "Exclusive": {
             "name": "Ki",
-            "description": "You may add 1/4 your Body Score rounded down + your Proficiency Bonus to your Armor Class so long as you are not wearing armor. In addition, you gain Ki charges,A number of charges equal to your Proficiency Bonus used for certain abilities.",
+            "description": "You may add 1/4 your Body Score rounded down + your Proficiency Bonus to your Armor Class so long as you are not wearing armor. In addition, you gain Ki charges, A number of charges equal to your Proficiency Bonus used for certain abilities.",
         },
         "Spellcaster": false,
         "Abilities": {
@@ -143,6 +163,16 @@ export const Classes = {
             9: [],
         },
         "Subclasses": {
+            "The Iron Hand": {
+                "name": "The Iron Hand",
+                "description": "The Iron Hand monks believe in peace and prosperity, though they also believe in strong bodies and fists...",
+                "abilities": {
+                    1: [],
+                    4: [],
+                    7: [],
+                    10: [],
+                }
+            }
         }
     },
     "Paladin": {
@@ -162,6 +192,16 @@ export const Classes = {
             9: [],
         },
         "Subclasses": {
+            "Oath of Eternal": {
+                "name": "Oath of Eternal",
+                "description": "A belief that all people deserve a life after their time on the material plane, and a sword to help some people there faster...",
+                "abilities": {
+                    1: [],
+                    4: [],
+                    7: [],
+                    10: [],
+                }
+            }
         }
     },
     "Ranger": {
@@ -169,7 +209,7 @@ export const Classes = {
         "Proficiency" : "Dexterity",
         "Exclusive": {
             "name": "Sharpshooter",
-            "description": "While attacking with a Ranged weapon, you may Double your Proficiency Bonus added to your attack roll. Your Ranged Attacks also ignore cover. Critical Strikes with a Ranged weapon may apply other effects (listed below) to the target.",
+            "description": "You may Double your Proficiency Bonus on Attack Rolls with ranged weapons. Your Ranged Attacks also ignore cover. Critical Strikes with a Ranged weapon may apply other effects to the target.",
         },
         "Spellcaster": false,
         "Abilities": {
@@ -181,6 +221,16 @@ export const Classes = {
             9: [],
         },
         "Subclasses": {
+            "Calvary": {
+                "name": "Calvary",
+                "description": "A mounted combatant to take ground and lives alike...",
+                "abilities": {
+                    1: [],
+                    4: [],
+                    7: [],
+                    10: [],
+                }
+            }
         }
     },
     "Rogue": {
@@ -200,6 +250,16 @@ export const Classes = {
             9: [],
         },
         "Subclasses": {
+            "Poisoner": {
+                "name": "Poisoner",
+                "description": "A specialized alchemist capable of poisoning the world...",
+                "abilities": {
+                    1: [],
+                    4: [],
+                    7: [],
+                    10: [],
+                }
+            }
         }
     },
     "Sage": {
@@ -219,6 +279,16 @@ export const Classes = {
             9: [],
         },
         "Subclasses": {
+            "Healer": {
+                "name": "Healer",
+                "description": "Worship of the Deity of Life, the Healer Cleric specializes in keeping their party alive.",
+                "abilities": {
+                    1: [],
+                    4: [],
+                    7: [],
+                    10: [],
+                }
+            }
         }
     },
     "Sorcerer": {
@@ -238,6 +308,16 @@ export const Classes = {
             9: [],
         },
         "Subclasses": {
+            "Bard": {
+                "name": "Bard",
+                "description": "Finding the Magic in music, you find ways to weave your spells into a beautiful tune...",
+                "abilities": {
+                    1: [],
+                    4: [],
+                    7: [],
+                    10: [],
+                }
+            }
         }
     },
     "Tinkerer": {
@@ -257,6 +337,16 @@ export const Classes = {
             9: [],
         },
         "Subclasses": {
+            "Powder Monkey": {
+                "name": "Powder Monkey",
+                "description": "Who needs spells when you have BLACK POWDER...",
+                "abilities": {
+                    1: [],
+                    4: [],
+                    7: [],
+                    10: [],
+                }
+            }
         }
     },
     "Warlock": {
@@ -276,6 +366,16 @@ export const Classes = {
             9: [],
         },
         "Subclasses": {
+            "Pact of a Dragon": {
+                "name": "Pact of a Dragon",
+                "description": "You made a deal with a dragon... Good job...",
+                "abilities": {
+                    1: [],
+                    4: [],
+                    7: [],
+                    10: [],
+                }
+            }
         }
     },
     "Warrior": {
@@ -295,6 +395,16 @@ export const Classes = {
             9: [],
         },
         "Subclasses": {
+            "General": {
+                "name": "General",
+                "description": "A gifted leader ready to brave the front lines for their people.",
+                "abilities": {
+                    1: [],
+                    4: [],
+                    7: [],
+                    10: [],
+                }
+            }
         }
     },
 }
