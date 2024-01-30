@@ -3,7 +3,7 @@ import { useStore, login } from "@components/netlifyAuth";
 
 export default function CharacterCreator() {
 
-  if (useStore.getState()?.user?.id) {
+  if (!!!useStore.getState()?.user?.id) {
     return (
       <div className="home-container">
         <h1>Sorry!</h1>
