@@ -4,6 +4,7 @@ import { Lineages } from "src/fixtures/Lineages";
 
 export default function CharacterCreator() {
   const [selectedLineage, setSelectedLineage] = useState("")
+  const [startingClass, setStartingClass] = useState("")
 
   if (!!!useStore.getState()?.user?.id) {
     return (
@@ -16,24 +17,51 @@ export default function CharacterCreator() {
     )
   }
   return (
-    <div className="home-container">
+    <div className="character-creator-container">
       <h1>GORP</h1>
       <form name="character" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="character" />
-        <input type="hidden" name="user-token" value={useStore.getState()?.user?.id} />
-        <label>Character Name: <input type="text" name="name" /></label>
-        <label>Lineage: 
-          <input type="select" name="lineage" onChange={(event) => setSelectedLineage(event.target.value)}>
-            <option value={Lineages.BeastBorn}>Beast-born</option>
-            <option value={Lineages.Cellier}>Cellier</option>
-            <option value={Lineages.Elemental}>Elemental</option>
-            <option value={Lineages.Elf}>Elf</option>
-            <option value={Lineages.Human}>Human</option>
-            <option value={Lineages.Orc}>Orc</option>
-            <option value={Lineages.Stout}>Stout</option>
-          </input>
-        </label>
-        <p>Description:<br/>{selectedLineage}</p>
+        <div>
+          <input type="hidden" name="form-name" value="character" />
+          <input type="hidden" name="user-token" value={useStore.getState()?.user?.id} />
+        </div>
+        <div>
+          <label><h2>Character Name: <input type="text" name="name" /></h2></label>
+        </div>
+        <div>
+          <label><h2>Lineage:{' '}</h2>
+            <select name="lineage" onChange={(event) => setSelectedLineage(event.target.value)}>
+              <option value=""></option>
+              <option value="BeastBorn">Beast-born</option>
+              <option value="Cellier">Cellier</option>
+              <option value="Elemental">Elemental</option>
+              <option value="Elf">Elf</option>
+              <option value="Human">Human</option>
+              <option value="Orc">Orc</option>
+              <option value="Stout">Stout</option>
+            </select>
+          </label>
+          <p><strong>Description:</strong><br/>{Lineages[selectedLineage]?.Description}</p>
+          <p><strong>Ability:</strong><br/>{Lineages[selectedLineage]?.Ability}</p>
+        </div>
+        <div>
+          <label><h2>Starting Class:</h2>
+            <select name="startingClass" onChange={(event) => setStartingClass(event.target.value)}>
+              <option value=""></option>
+              <option value="Barbarian">Barbarian</option>
+              <option value="Druid">Druid</option>
+              <option value="Mage">Mage</option>
+              <option value="Monk">Monk</option>
+              <option value="Paladin">Paladin</option>
+              <option value="Ranger">Ranger</option>
+              <option value="Rouge">Rouge</option>
+              <option value="Sage">Sage</option>
+              <option value="Sorcerer">Sorcerer</option>
+              <option value="Tinkerer">Tinkerer</option>
+              <option value="Warlock">Warlock</option>
+              <option value="Warrior">Warrior</option>
+            </select>
+          </label>
+        </div>
       </form>
     </div>
   )
