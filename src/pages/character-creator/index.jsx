@@ -26,7 +26,6 @@ export default function CharacterCreator() {
 
     if(Classes[startingClass]?.Subclasses){
       Object.keys(Classes[startingClass]?.Subclasses).map(subclass => {
-        console.log(subclass)
         subclassSelector.options[subclassSelector.options.length] = new Option(subclass);
       })
     }
