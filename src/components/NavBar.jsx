@@ -1,4 +1,4 @@
-import netlifyAuth from '../../netlifyAuth.js'
+import netlifyAuth from './netlifyAuth.js'
 
 export default function NavBar() {
 

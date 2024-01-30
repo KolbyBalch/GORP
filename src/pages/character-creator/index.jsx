@@ -1,5 +1,5 @@
 import React from "react";
-import { authUser } from "netlifyAuth";
+import { authUser } from "@components/netlifyAuth";
 
 export default function CharacterCreator() {
   return (

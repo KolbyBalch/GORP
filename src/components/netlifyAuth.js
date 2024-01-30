@@ -1,7 +1,7 @@
 import netlifyIdentity from 'netlify-identity-widget'
-export const authUser = {
-    userToken: null,
-}
+import { create } from 'zustand'
+
+export const useStore = create(() => ({ user: null }))
 
 const netlifyAuth = {
   isAuthenticated: false,
@@ -10,6 +10,7 @@ const netlifyAuth = {
     window.netlifyIdentity = netlifyIdentity
     netlifyIdentity.on('init', (user) => {
       callback(user)
+      useStore.setState({ user: user })
     })
     netlifyIdentity.init()
   },
@@ -19,7 +20,7 @@ const netlifyAuth = {
     netlifyIdentity.on('login', (user) => {
       this.user = user
       callback(user)
-      authUser.userToken = user.token.access_token
+      useStore.setState({ user: user })
       netlifyIdentity.close()
     })
   },
@@ -28,6 +29,7 @@ const netlifyAuth = {
     netlifyIdentity.logout()
     netlifyIdentity.on('logout', () => {
       this.user = null
+      useStore.setState({ user: null })
       callback()
     })
   },
