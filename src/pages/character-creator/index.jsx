@@ -11,39 +11,42 @@ export default function CharacterCreator() {
   // LINEAGE OPTION DROPDOWN
   useEffect(() => {
     let addtionalOptionSelector = document.getElementById("lineageOptionSelector");
-    addtionalOptionSelector.options.length = 0;
-    addtionalOptionSelector.options[0] = new Option()
-
-    if (Lineages[selectedLineage]?.AdditionalOption) {
-      Lineages[selectedLineage]?.AdditionalOption.options.map(option => {
-        addtionalOptionSelector.options[addtionalOptionSelector.options.length] = new Option(option);
-      })
+    if (addtionalOptionSelector) {
+      addtionalOptionSelector.options.length = 0;
+      addtionalOptionSelector.options[0] = new Option()
+      if (Lineages[selectedLineage]?.AdditionalOption) {
+        Lineages[selectedLineage]?.AdditionalOption.options.map(option => {
+          addtionalOptionSelector.options[addtionalOptionSelector.options.length] = new Option(option);
+        })
+      }
     }
   })
 
   // SUBCLASS DROPDOWN
   useEffect(() => {
     let subclassSelector = document.getElementById("subclassSelector");
-    subclassSelector.options.length = 0;
-    subclassSelector.options[0] = new Option()
+    if (subclassSelector) {
+      subclassSelector.options.length = 0;
+      subclassSelector.options[0] = new Option()
 
-    if(Classes[startingClass]?.Subclasses){
-      Object.keys(Classes[startingClass]?.Subclasses).map(subclass => {
-        subclassSelector.options[subclassSelector.options.length] = new Option(subclass);
-      })
+      if(Classes[startingClass]?.Subclasses){
+        Object.keys(Classes[startingClass]?.Subclasses).map(subclass => {
+          subclassSelector.options[subclassSelector.options.length] = new Option(subclass);
+        })
+      }
     }
   }, [startingClass])
 
-  // if (!!!useStore.getState()?.user?.id) {
-  //   return (
-  //     <div className="home-container">
-  //       <h1>Sorry!</h1>
-  //       <p>You must be logged in to see and create characters.</p>
-  //       <button onClick={login} >Click here to login</button>
-  //       <p>If you are logged in, please try again. If this issue persists, please let us know.</p>
-  //     </div>
-  //   )
-  // }
+  if (!!!useStore.getState()?.user?.id) {
+    return (
+      <div className="home-container">
+        <h1>Sorry!</h1>
+        <p>You must be logged in to see and create characters.</p>
+        <button onClick={login} >Click here to login</button>
+        <p>If you are logged in, please try again. If this issue persists, please let us know.</p>
+      </div>
+    )
+  }
   return (
     <div className="character-creator-container">
       <form name="character" method="POST" data-netlify="true">
