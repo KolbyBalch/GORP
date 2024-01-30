@@ -1,32 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useStore, login } from "@components/netlifyAuth";
 import { Lineages } from "src/fixtures/Lineages";
+import { Classes } from "src/fixtures/Classes";
 
 export default function CharacterCreator() {
   const [selectedLineage, setSelectedLineage] = useState("")
   const [startingClass, setStartingClass] = useState("")
+  const [chosenSubclass, setChosenSubclass] = useState("")
 
-  if (!!!useStore.getState()?.user?.id) {
-    return (
-      <div className="home-container">
-        <h1>Sorry!</h1>
-        <p>You must be logged in to see and create characters.</p>
-        <button onClick={login} >Click here to login</button>
-        <p>If you are logged in, please try again. If this issue persists, please let us know.</p>
-      </div>
-    )
-  }
+  useEffect(() => {
+    let subclassSelector = document.getElementById("subclassSelector");
+    subclassSelector.options.length = 0;
+
+    if(Classes[startingClass]?.Subclasses){
+      console.log(Object.keys(Classes[startingClass]?.Subclasses))
+      Object.keys(Classes[startingClass]?.Subclasses).map(subclass => {
+        console.log(subclass)
+        subclassSelector.options[subclassSelector.options.length] = new Option(subclass);
+      })
+    }
+  }, [startingClass])
+
+  // if (!!!useStore.getState()?.user?.id) {
+  //   return (
+  //     <div className="home-container">
+  //       <h1>Sorry!</h1>
+  //       <p>You must be logged in to see and create characters.</p>
+  //       <button onClick={login} >Click here to login</button>
+  //       <p>If you are logged in, please try again. If this issue persists, please let us know.</p>
+  //     </div>
+  //   )
+  // }
   return (
     <div className="character-creator-container">
       <h1>GORP</h1>
       <form name="character" method="POST" data-netlify="true">
+        {/* Hidden Inputs */}
         <div>
           <input type="hidden" name="form-name" value="character" />
           <input type="hidden" name="user-token" value={useStore.getState()?.user?.id} />
         </div>
+        {/* Character Names */}
         <div>
           <label><h2>Character Name: <input type="text" name="name" /></h2></label>
         </div>
+        {/* Lineage Selection */}
         <div>
           <label><h2>Lineage:{' '}</h2>
             <select name="lineage" onChange={(event) => setSelectedLineage(event.target.value)}>
@@ -40,9 +58,10 @@ export default function CharacterCreator() {
               <option value="Stout">Stout</option>
             </select>
           </label>
-          <p><strong>Description:</strong><br/>{Lineages[selectedLineage]?.Description}</p>
-          <p><strong>Ability:</strong><br/>{Lineages[selectedLineage]?.Ability}</p>
+          <p hidden={selectedLineage === ""}><strong>Description:</strong><br/>{Lineages[selectedLineage]?.Description}</p>
+          <p hidden={selectedLineage === ""}><strong>Ability:</strong><br/>{Lineages[selectedLineage]?.Ability}</p>
         </div>
+        {/* Class Selections */}
         <div>
           <label><h2>Starting Class:</h2>
             <select name="startingClass" onChange={(event) => setStartingClass(event.target.value)}>
@@ -59,6 +78,21 @@ export default function CharacterCreator() {
               <option value="Tinkerer">Tinkerer</option>
               <option value="Warlock">Warlock</option>
               <option value="Warrior">Warrior</option>
+            </select>
+          </label>
+          <p hidden={startingClass === ""}><strong>Description:</strong><br/>{Classes[startingClass]?.Description}</p>
+          <p hidden={startingClass === ""}>
+            <strong>{Classes[startingClass]?.Exclusive.name}:</strong>
+            <br/>
+            {Classes[startingClass]?.Exclusive.description}
+          </p>
+
+          <label hidden={startingClass === ""}><h3>Subclass:</h3>
+            <select 
+              id="subclassSelector" 
+              name="subclass" 
+              onChange={(event) => setChosenSubclass(event.target.value)}
+            >
             </select>
           </label>
         </div>
