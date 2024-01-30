@@ -5,8 +5,7 @@ export const useStore = create(() => ({ user: null }))
 
 export const login = () => {
   netlifyAuth.authenticate((user) => {
-      setLoggedIn(!!user)
-      setUser(user)
+      useStore.setState({ user: user })
       netlifyAuth.closeModal()
   })
 }
