@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useStore, login } from "@components/netlifyAuth";
 
 export default function CharacterCreator() {
-  const router = useRouter()
 
   if (useStore.getState()?.user?.id) {
     return (
