@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { useStore, login } from "@components/netlifyAuth";
+import { Lineages } from "src/fixtures/Lineages";
 
 export default function CharacterCreator() {
+  const [selectedLineage, setSelectedLineage] = useState("")
 
   if (!!!useStore.getState()?.user?.id) {
     return (
@@ -20,6 +22,18 @@ export default function CharacterCreator() {
         <input type="hidden" name="form-name" value="character" />
         <input type="hidden" name="user-token" value={useStore.getState()?.user?.id} />
         <label>Character Name: <input type="text" name="name" /></label>
+        <label>Lineage: 
+          <input type="select" name="lineage" onChange={(event) => setSelectedLineage(event.target.value)}>
+            <option value={Lineages.BeastBorn}>Beast-born</option>
+            <option value={Lineages.Cellier}>Cellier</option>
+            <option value={Lineages.Elemental}>Elemental</option>
+            <option value={Lineages.Elf}>Elf</option>
+            <option value={Lineages.Human}>Human</option>
+            <option value={Lineages.Orc}>Orc</option>
+            <option value={Lineages.Stout}>Stout</option>
+          </input>
+        </label>
+        <p>Description:<br/>{selectedLineage}</p>
       </form>
     </div>
   )
