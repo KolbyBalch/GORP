@@ -60,23 +60,23 @@ export default function CharacterCreator() {
     }
   }, [startingClass])
 
-  // if (!!!useStore.getState()?.user?.id) {
-  //   return (
-  //     <div className="home-container">
-  //       <h1>Sorry!</h1>
-  //       <p>You must be logged in to see and create characters.</p>
-  //       <button onClick={login} >Click here to login</button>
-  //       <p>If you are logged in, please try again. If this issue persists, please let us know.</p>
-  //     </div>
-  //   )
-  // }
+  if (!!!useStore.getState()?.user?.id) {
+    return (
+      <div className="home-container">
+        <h1>Sorry!</h1>
+        <p>You must be logged in to see and create characters.</p>
+        <button onClick={login} >Click here to login</button>
+        <p>If you are logged in, please try again. If this issue persists, please let us know.</p>
+      </div>
+    )
+  }
   return (
     <div className="character-creator-container">
       <form name="character" onSubmit={e => {
         handleSubmit(e);
       }}>
         {/* Hidden Inputs */}
-        <input type="hidden" name="user-token" value={useStore.getState()?.user?.id || "d55286f8-27e6-40a9-beff-5a694b8c702a"} />
+        <input type="hidden" name="user-token" value={useStore.getState()?.user?.id} />
         {/* Character Names */}
         <div>
           <label><h1>Character Name: <input type="text" name="name" /></h1></label>
