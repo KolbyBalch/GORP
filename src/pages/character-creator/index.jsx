@@ -2,11 +2,34 @@ import React, { useEffect, useState } from "react";
 import { useStore, login } from "@components/netlifyAuth";
 import { Lineages } from "src/fixtures/Lineages";
 import { Classes } from "src/fixtures/Classes";
+import { createCharacter } from "src/actions/Character";
 
 export default function CharacterCreator() {
   const [selectedLineage, setSelectedLineage] = useState("")
   const [startingClass, setStartingClass] = useState("")
   const [chosenSubclass, setChosenSubclass] = useState("")
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    if(form.name.value && form.lineage.value && form.startingClass.value && form.subclass.value && form.score20.value && form.score12.value && form.score10.value && form.score8.value && form.score6.value && form.score4.value) {
+      const characterData = {
+        name: form.name.value,
+        lineage: form.lineage.value,
+        levels: [form.startingClass.value],
+        subclass: [form.subclass.value],
+        abilityScores: {
+          20: form.score20.value,
+          12: form.score12.value,
+          10: form.score10.value,
+          8: form.score8.value,
+          6: form.score6.value,
+          4: form.score4.value
+        }
+      }
+      createCharacter(characterData);
+    }
+  }
 
   // LINEAGE OPTION DROPDOWN
   useEffect(() => {
@@ -37,22 +60,23 @@ export default function CharacterCreator() {
     }
   }, [startingClass])
 
-  if (!!!useStore.getState()?.user?.id) {
-    return (
-      <div className="home-container">
-        <h1>Sorry!</h1>
-        <p>You must be logged in to see and create characters.</p>
-        <button onClick={login} >Click here to login</button>
-        <p>If you are logged in, please try again. If this issue persists, please let us know.</p>
-      </div>
-    )
-  }
+  // if (!!!useStore.getState()?.user?.id) {
+  //   return (
+  //     <div className="home-container">
+  //       <h1>Sorry!</h1>
+  //       <p>You must be logged in to see and create characters.</p>
+  //       <button onClick={login} >Click here to login</button>
+  //       <p>If you are logged in, please try again. If this issue persists, please let us know.</p>
+  //     </div>
+  //   )
+  // }
   return (
     <div className="character-creator-container">
-      <form name="character" method="POST" data-netlify="true">
+      <form name="character" onSubmit={e => {
+        handleSubmit(e);
+      }}>
         {/* Hidden Inputs */}
-        <input type="hidden" name="form-name" value="character" />
-        <input type="hidden" name="user-token" value={useStore.getState()?.user?.id} />
+        <input type="hidden" name="user-token" value={useStore.getState()?.user?.id || "d55286f8-27e6-40a9-beff-5a694b8c702a"} />
         {/* Character Names */}
         <div>
           <label><h1>Character Name: <input type="text" name="name" /></h1></label>
@@ -78,11 +102,11 @@ export default function CharacterCreator() {
               {Lineages[selectedLineage]?.AdditionalOption?.prompt}
             </h3>
             <select 
-              name="lineageOptionSelector" 
-                id="lineageOptionSelector"
-                hidden={!!!Lineages[selectedLineage]?.AdditionalOption}
-              >
-              </select>
+              name="lineageOption" 
+              id="lineageOptionSelector"
+              hidden={!!!Lineages[selectedLineage]?.AdditionalOption}
+            >
+            </select>
           </label>
         </div>
         {/* Class Selections */}

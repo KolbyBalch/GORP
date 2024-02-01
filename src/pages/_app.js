@@ -12,10 +12,6 @@ function Application({ Component, pageProps }) {
     })
   }, [loggedIn])
 
-  useEffect(() => {
-    console.log(useStore.getState().user)
-  })
-
   return (
     <Layout>
       <Component {...pageProps} />
