@@ -4,7 +4,7 @@ import faunadb from 'faunadb' /* Import faunaDB sdk */
 /* configure faunaDB Client with our secret */
 const q = faunadb.query
 const client = new faunadb.Client({
-  secret: NEXT_CLIENT_SSR_ENTRY_SUFFIX.env.get("FAUNADB_SERVER_SECRET")
+  secret: Netlify.env.get("FAUNADB_SERVER_SECRET")
 })
 
 export default async (req, context) => {
