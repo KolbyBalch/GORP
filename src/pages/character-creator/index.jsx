@@ -14,6 +14,7 @@ export default function CharacterCreator() {
     const form = e.target;
     if(form.name.value && form.lineage.value && form.startingClass.value && form.subclass.value && form.score20.value && form.score12.value && form.score10.value && form.score8.value && form.score6.value && form.score4.value) {
       const characterData = {
+        associatedUserToken: useStore.getState()?.user?.id,
         name: form.name.value,
         lineage: form.lineage.value,
         levels: [form.startingClass.value],
