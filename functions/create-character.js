@@ -19,6 +19,6 @@ export default async (req, context) => {
     return new Response(response, { status: 200 })
   }).catch((error) => {
     console.log("error", error)
-    return new Response(response, { status: 400 })
+    return new Response(error, { status: 400 })
   })
 }
