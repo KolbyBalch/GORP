@@ -9,11 +9,12 @@ const client = new faunadb.Client({
 
 export default async (req, context) => {
   const data = req.body;
-  const character = {
-    data: data
-  }
   console.log(character)
-  await client.query(q.Create(q.Ref("classes/character"), character))
+  await client.query(q.Create(q.Ref("classes/character"),
+    {
+      data: data
+    }
+  ))
   .then((response) => {
     console.log("success", response)
     return new Response(response, { status: 200 })
