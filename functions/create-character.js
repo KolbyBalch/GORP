@@ -8,6 +8,7 @@ const client = new faunadb.Client({
 })
 
 export default async (req, context) => {
+  console.log(req)
   const data = JSON.parse(req.body);
   const character = {
     data: data
