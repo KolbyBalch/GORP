@@ -9,6 +9,7 @@ const client = new faunadb.Client({
 
 export default async (req, context) => {
   const data = req.body.source;
+  console.log(data)
   await client.query(q.Create(q.Ref("classes/character"),
     {
       data: data
