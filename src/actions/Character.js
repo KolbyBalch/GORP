@@ -4,6 +4,6 @@ export function createCharacter(data) {
         body: JSON.stringify(data),
         method: 'POST'
     }).then(response => {
-        return response.json()
+        return response
     })
 }
