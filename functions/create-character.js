@@ -12,7 +12,7 @@ export default async (req, context) => {
   console.log(data)
   await client.query(q.Create(q.Ref("classes/character"),
     {
-      data: data.body
+      data: data
     }
   ))
   .then((response) => {
