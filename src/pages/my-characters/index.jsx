@@ -1,4 +1,4 @@
-import React, { useDeferredValue, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useStore } from "@components/netlifyAuth";
 import { getCharacters } from "src/actions/Character";
