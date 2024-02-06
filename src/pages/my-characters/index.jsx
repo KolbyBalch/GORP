@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useStore } from "@components/netlifyAuth";
+import { useStore, login } from "@components/netlifyAuth";
 import { getCharacters } from "src/actions/Character";
 
 export default function myCharacters() {
