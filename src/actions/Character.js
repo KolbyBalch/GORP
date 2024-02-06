@@ -4,6 +4,14 @@ export function createCharacter(data) {
         body: JSON.stringify(data),
         method: 'POST'
     }).then(response => {
-        return response.json()
+        return response
+    })
+}
+
+export function getCharacters(userId) {
+    return fetch('/.netlify/functions/get-characters', {
+        method: 'GET'
+    }).then(response => {
+        return response
     })
 }
