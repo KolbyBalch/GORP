@@ -13,8 +13,8 @@ export default async (req, context) => {
     Paginate(
         Match(
             Index(
-                'characterByUser'
-                , req.params.userId
+                'characterByUser',
+                req.QueryStringParameters["id"]
             )
         )
     )

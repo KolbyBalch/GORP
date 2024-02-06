@@ -9,7 +9,7 @@ export function createCharacter(data) {
 }
 
 export function getCharacters(userId) {
-    return fetch('/.netlify/functions/get-characters', {
+    return fetch(`/.netlify/functions/get-characters?id=${userId}`, {
         method: 'GET'
     }).then(response => {
         return response
