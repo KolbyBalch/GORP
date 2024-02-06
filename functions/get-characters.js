@@ -8,7 +8,7 @@ const client = new faunadb.Client({
 })
 
 export default async (req, context) => {
-  const data = await req.json()
+  const data = await req
   await client.query(
     Paginate(
         Match(
