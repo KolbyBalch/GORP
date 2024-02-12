@@ -1,4 +1,5 @@
 /* code from functions/todos-create.js */
+import { union } from 'cypress/types/lodash'
 import faunadb from 'faunadb' /* Import faunaDB sdk */
 
 /* configure faunaDB Client with our secret */
@@ -16,9 +17,9 @@ export default async (req, context) => {
   ))
   .then((response) => {
     console.log("success", response)
-    return new Response(JSON.stringify(response), { status: 200 })
+    return new Response(undefined, { status: 200 })
   }).catch((error) => {
     console.log("error", error)
-    return new Response(JSON.stringify(error), { status: 400 })
+    return new Response(undefined, { status: 400 })
   })
 }
