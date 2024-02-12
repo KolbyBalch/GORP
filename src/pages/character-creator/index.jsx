@@ -28,7 +28,7 @@ export default function CharacterCreator() {
           4: form.score4.value
         }
       }
-      createCharacter(characterData);
+      console.log(createCharacter(characterData));
     }
   }
 
