@@ -1,5 +1,4 @@
 /* code from functions/todos-create.js */
-import { union } from 'cypress/types/lodash'
 import faunadb from 'faunadb' /* Import faunaDB sdk */
 
 /* configure faunaDB Client with our secret */
