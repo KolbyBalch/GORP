@@ -16,9 +16,15 @@ export default async (req, context) => {
   ))
   .then((response) => {
     console.log("success", response)
-    return new Response(response.json(), { status: 200 })
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ status: "success", data: response})
+    }
   }).catch((error) => {
     console.log("error", error)
-    return new Response(error.json(), { status: 400 })
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ status: "error", data: error})
+    }
   })
 }
