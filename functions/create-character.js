@@ -16,9 +16,9 @@ export default async (req, context) => {
   ))
   .then((response) => {
     console.log("success", response)
-    return Response(response, { status: 200 })
+    return new Response(response.json(), { status: 200 })
   }).catch((error) => {
     console.log("error", error)
-    return Response(error, { status: 400 })
+    return new Response(error.json(), { status: 400 })
   })
 }
