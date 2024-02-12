@@ -11,14 +11,14 @@ export default async (req, context) => {
   const data = await req.json()
   await client.query(q.Create(q.Ref("classes/character"),
     {
-      data: data
+      data: JSON.stringify(data)
     }
   ))
-  // .then((response) => {
-  //   console.log("success", response)
-  //   return new Response(undefined, { status: 200 })
-  // }).catch((error) => {
-  //   console.log("error", error)
-  //   return new Response(undefined, { status: 400 })
-  // })
+  .then((response) => {
+    console.log("success", response)
+    return new Response(response, { status: 200 })
+  }).catch((error) => {
+    console.log("error", error)
+    return new Response(error, { status: 400 })
+  })
 }
