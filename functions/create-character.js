@@ -14,11 +14,11 @@ export default async (req, context) => {
       data: data
     }
   ))
-  .then((response) => {
-    console.log("success", response)
-    return new Response(undefined, { status: 200 })
-  }).catch((error) => {
-    console.log("error", error)
-    return new Response(undefined, { status: 400 })
-  })
+  // .then((response) => {
+  //   console.log("success", response)
+  //   return new Response(undefined, { status: 200 })
+  // }).catch((error) => {
+  //   console.log("error", error)
+  //   return new Response(undefined, { status: 400 })
+  // })
 }
